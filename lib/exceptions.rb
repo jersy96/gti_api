@@ -8,4 +8,10 @@ module Exceptions
       I18n.t('exceptions.unallowed_role', role: @role)
     end
   end
+
+  class InvalidCredentials < StandardError
+    def message
+      I18n.t('exceptions.invalid_credentials')
+    end
+  end
 end
