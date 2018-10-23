@@ -17,9 +17,6 @@ es:
         invalid: "El campo %{attribute} tiene un formato invalido"
         not_a_number: "El campo %{attribute} debe contener unicamente caracteres numericos"
         taken: "Ya existe un %{model} con el campo %{attribute} igual a %{value}"
-  errors:
-      messages:
-        token_not_found: "Token no encontrado"
   exceptions:
     invalid_credentials: "Credenciales invalidas"
     invalid_authentication_type: "Tipo de autenticacion invalida"
