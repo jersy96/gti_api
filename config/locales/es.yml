@@ -21,6 +21,5 @@ es:
       messages:
         token_not_found: "Token no encontrado"
   exceptions:
-    unallowed_role: "No estas autorizado para crear un usuario de tipo %{role}"
     invalid_credentials: "Credenciales invalidas"
     invalid_authentication_type: "Tipo de autenticacion invalida"
