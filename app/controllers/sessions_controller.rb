@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         token.destroy
         render json: token, status: :ok 
       else
-        render json: {token: I18n.t('errors.messages.token_not_found')},  status: :bad_request
+        raise Exceptions::TokenNotFound
       end 
     end 
   end
