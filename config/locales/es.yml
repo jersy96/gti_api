@@ -20,3 +20,4 @@ es:
   exceptions:
     invalid_credentials: "Credenciales invalidas"
     invalid_authentication_type: "Tipo de autenticacion invalida"
+    token_not_found: "Token no encontrado"
