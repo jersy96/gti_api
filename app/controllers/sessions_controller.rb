@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
   rescue_from Exceptions::InvalidAuthenticationType, with: :if_auth_error
   rescue_from Exceptions::InvalidCredentials, with: :if_auth_error
 
+  skip_before_action :set_current_user
+
   def create
     auth = Authentication.new(params.require(:credentials), params[:type])
     auth.create_session

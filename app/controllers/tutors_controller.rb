@@ -1,4 +1,5 @@
 class TutorsController < ApplicationController
+  skip_before_action :set_current_user, only: [:create]
   before_action :set_tutor, only: [:update]
 
   def create

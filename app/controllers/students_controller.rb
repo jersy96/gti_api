@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+  skip_before_action :set_current_user, only: [:create]
   before_action :set_student, only: [:update]
 
   def create
