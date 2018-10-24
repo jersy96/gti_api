@@ -2,6 +2,7 @@ class ApplicationController < ActionController::API
   include ActionController::HttpAuthentication::Token::ControllerMethods
 
   rescue_from Exceptions::TokenNotFound, with: :if_token_not_found
+  rescue_from ActiveRecord::RecordNotFound, with: :if_record_not_found
 
   before_action :set_current_user
 
@@ -16,5 +17,9 @@ class ApplicationController < ActionController::API
 
   def if_token_not_found(exception)
     render json: {token: exception.message}, status: :unprocessable_entity
+  end
+
+  def if_record_not_found(exception)
+    render json: {record_not_found: exception.message}, status: :unprocessable_entity
   end
 end
