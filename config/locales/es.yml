@@ -20,6 +20,9 @@ es:
         taken: "Ya existe un %{model} con el campo %{attribute} igual a %{value}"
     exceptions:
       not_found: "%{klass} con id = %{id} no encontrado"
+  errors:
+    messages:
+      not_a_student: "No eres un estudiante"
   exceptions:
     invalid_credentials: "Credenciales invalidas"
     invalid_authentication_type: "Tipo de autenticacion invalida"
