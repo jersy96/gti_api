@@ -3,12 +3,15 @@ es:
     models:
       user: "usuario"
       student: "estudiante"
+      subject: "materia"
     attributes:
       user:
         first_name: "primer nombre"
         email: "email"
         phone: "telefono"
         cellphone: "celular"
+      subject:
+        name: "nombre"
     errors:
       models:
         user:
@@ -17,7 +20,7 @@ es:
         blank: "El campo %{attribute} no puede ser nulo"
         invalid: "El campo %{attribute} tiene un formato invalido"
         not_a_number: "El campo %{attribute} debe contener unicamente caracteres numericos"
-        taken: "Ya existe un %{model} con el campo %{attribute} igual a %{value}"
+        taken: "Ya existe un/una %{model} con el campo %{attribute} igual a %{value}"
     exceptions:
       not_found: "%{klass} con id = %{id} no encontrado"
   errors:
