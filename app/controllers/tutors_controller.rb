@@ -1,6 +1,10 @@
 class TutorsController < ApplicationController
   skip_before_action :set_current_user, only: [:create]
-  before_action :set_tutor, only: [:update]
+  before_action :set_tutor, only: [:show, :update]
+
+  def show
+    render json: @tutor, status: :ok
+  end
 
   def create
     tutor = Tutor.new(tutor_params)
