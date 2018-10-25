@@ -30,3 +30,4 @@ es:
     invalid_credentials: "Credenciales invalidas"
     invalid_authentication_type: "Tipo de autenticacion invalida"
     token_not_found: "Token no encontrado"
+    unknown_filter_type: "Filtro desconocido: %{filter_type}"
