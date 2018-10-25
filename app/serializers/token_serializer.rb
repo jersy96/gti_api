@@ -1,3 +1,3 @@
-class TokenSerializer < ActiveModel::Serializer
+class TokenSerializer < ApplicationSerializer
   attributes :secret
 end
