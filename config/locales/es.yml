@@ -39,3 +39,7 @@ es:
     invalid_authentication_type: "Tipo de autenticacion invalida"
     token_not_found: "Token no encontrado"
     unknown_filter_type: "Filtro desconocido: %{filter_type}"
+  time:
+    formats:
+      default: "%-d-%-m-%Y %I:%M %p"
+    pm: "pm"
