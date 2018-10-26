@@ -29,6 +29,7 @@ es:
         invalid: "El campo %{attribute} tiene un formato invalido"
         not_a_number: "El campo %{attribute} debe contener unicamente caracteres numericos"
         taken: "Ya existe un/una %{model} con el campo %{attribute} igual a %{value}"
+        required: "Id no encontrado"
     exceptions:
       not_found: "%{klass} con id = %{id} no encontrado"
   errors:
