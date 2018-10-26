@@ -1,5 +1,5 @@
 class TutorsController < ApplicationController
-  rescue_from Exceptions::TokenNotFound, with: :if_token_not_found
+  rescue_from Exceptions::UnknownFilterType, with: :if_unknown_filter
   skip_before_action :set_current_user, only: [:create]
   before_action :set_tutor, only: [:show, :update]
 
@@ -68,5 +68,9 @@ class TutorsController < ApplicationController
         ]
       ]
     )
+  end
+
+  def if_unknown_filter(exception)
+    render json: {filter_type: exception.message}
   end
 end
