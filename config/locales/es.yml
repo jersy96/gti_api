@@ -12,10 +12,18 @@ es:
         cellphone: "celular"
       subject:
         name: "nombre"
+      solicitude:
+        solicitude_type: "tipo de solicitud"
     errors:
       models:
         user:
           invalid_role: "rol invalido"
+        solicitude:
+          attributes:
+            solicitude_type:
+              invalid_enum: "no puede ser %{value}, los valores validos son: %{valid_values}"
+            payment_method:
+              invalid_enum: "no puede ser %{value}, los valores validos son: %{valid_values}"
       messages:
         blank: "El campo %{attribute} no puede ser nulo"
         invalid: "El campo %{attribute} tiene un formato invalido"

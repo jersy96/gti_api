@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 1
+  tutor_id: 1
+  solicitude_type: 1
+  payment_method: 1
+  state: MyString
+  date: 2018-10-26 15:09:17
+  hours: 1.5
+  address: MyString
+  attendants: 1
+
+two:
+  student_id: 1
+  tutor_id: 1
+  solicitude_type: 1
+  payment_method: 1
+  state: MyString
+  date: 2018-10-26 15:09:17
+  hours: 1.5
+  address: MyString
+  attendants: 1
