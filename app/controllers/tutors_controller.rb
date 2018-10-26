@@ -1,6 +1,17 @@
 class TutorsController < ApplicationController
+  rescue_from Exceptions::TokenNotFound, with: :if_token_not_found
   skip_before_action :set_current_user, only: [:create]
   before_action :set_tutor, only: [:show, :update]
+
+  def index
+    tutors = if index_params.present?
+      tf = TutorFilter.new
+      tf.filter(index_params[:filters])
+    else
+      Tutor.all
+    end
+    render json: tutors, status: :ok
+  end
 
   def show
     render json: @tutor, status: :ok
@@ -43,6 +54,19 @@ class TutorsController < ApplicationController
       :description,
       :price,
       :average
+    )
+  end
+
+  def index_params
+    params.permit(
+      filters:[
+        :type,
+        content:[
+          :value,
+          :price1,
+          :price2
+        ]
+      ]
     )
   end
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # Routes
   put 'become_a_tutor', to: 'become_a_tutor#update'
+  post 'tutors/index', to: 'tutors#index'
 
   # Resources
   resources :sessions, only: [:create, :destroy]
