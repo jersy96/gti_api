@@ -8,7 +8,7 @@ class BecomeATutorController < ApplicationController
         render json: tutor.errors.messages, status: :unprocessable_entity
       end
     else
-      render json: {student: I18n.t('errors.messages.not_a_student')}, status: :unporcessable_entity
+      render json: {student: I18n.t('errors.messages.not_a_student')}, status: :unprocessable_entity
     end
   end
 
