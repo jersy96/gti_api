@@ -8,6 +8,7 @@ class SolicitudesController < ApplicationController
 
   def create
     solicitude = Solicitude.new(solicitude_params)
+    solicitude.student_id = @current_user.id
     if solicitude.save
       render json: solicitude, status: :ok
     else
@@ -31,7 +32,6 @@ class SolicitudesController < ApplicationController
 
   def solicitude_params
     params.permit(
-      :student_id,
       :tutor_id,
       :solicitude_type,
       :payment_method,
@@ -45,6 +45,7 @@ class SolicitudesController < ApplicationController
 
   def update_params
     params.permit(
+      :tutor_id,
       :solicitude_type,
       :payment_method,
       :state,
