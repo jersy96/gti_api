@@ -18,10 +18,10 @@ class SolicitudesController < ApplicationController
 
   def update
     @solicitude.attributes = update_params
-    if solicitude.save
-      render json: solicitude, status: :ok
+    if @solicitude.save
+      render json: @solicitude, status: :ok
     else
-      render json: solicitude.errors.messages, status: :unprocessable_entity
+      render json: @solicitude.errors.messages, status: :unprocessable_entity
     end
   end
 
