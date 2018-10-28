@@ -12,7 +12,7 @@ class TutorFilter < Filter
   end
 
   def subject
-    Tutor.joins(:subjects).where('subjects.name LIKE ?', likefy(@fc['value']))
+    Tutor.joins(:subjects).where('subjects.name LIKE ?', likefy(@fc['value'].downcase)).uniq
   end
 
   def likefy(s)

@@ -6,9 +6,16 @@ class Subject < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true, allow_blank: true
 
+  #Callbacks
+  before_save :format_name
+
   # Methods
   private
   def validate_uniqueness(tutor)
     raise ActiveRecord::Rollback if self.tutors.include? tutor 
+  end
+
+  def format_name
+    self.name.downcase!
   end
 end
