@@ -5,7 +5,7 @@ class TutorFilter < Filter
   end
 
   def price
-    prices = [@fc['price1'], @fc['price2']]
+    prices = [@fc['price1'], @fc['price2']].compact
     p1 = prices.min
     p2 = prices.max
     Tutor.joins('JOIN tutor_profiles ON tutor_profiles.tutor_id = users.id').where('tutor_profiles.price BETWEEN ? AND ?', p1, p2)
