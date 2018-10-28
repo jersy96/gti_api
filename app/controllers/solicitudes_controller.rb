@@ -39,7 +39,9 @@ class SolicitudesController < ApplicationController
       :hours,
       :address,
       :date,
-      :attendants
+      :attendants,
+      :description,
+      :total_debt
     )
   end
 
@@ -52,7 +54,9 @@ class SolicitudesController < ApplicationController
       :hours,
       :address,
       :date,
-      :attendants
+      :attendants,
+      :description,
+      :total_debt
     )
   end
 end
