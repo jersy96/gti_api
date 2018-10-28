@@ -1,5 +1,5 @@
 class SolicitudeSerializer < ActiveModel::Serializer
-  attributes :id, :solicitude_type, :state, :hours, :address, :date, :attendants, :student, :tutor, :description, :total_debt
+  attributes :id, :solicitude_type, :state, :hours, :address, :date, :attendants, :student, :tutor, :description, :total_debt, :transaction_id
 
   def date
     I18n.l(object.date)

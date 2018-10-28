@@ -3,6 +3,9 @@ class Solicitude < ApplicationRecord
   belongs_to :tutor
   belongs_to :student
 
+  # Dependencies
+  has_secure_token :transaction_id
+
   # Enums
   enum solicitude_type: {single:0, group:1}, _suffix: :type
   enum payment_method: {cash:0, credit_card:1}, _prefix: :paid_in
