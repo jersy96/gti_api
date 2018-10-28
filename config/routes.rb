@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   # Routes
   put 'become_a_tutor', to: 'become_a_tutor#update'
   post 'tutors/index', to: 'tutors#index'
+  delete 'sessions', to: 'sessions#destroy'
 
   # Resources
-  resources :sessions, only: [:create, :destroy]
+  resources :sessions, only: [:create]
   resources :students, only: [:create, :update]
   resources :tutors, only: [:show, :create, :update]
   resources :subjects, only: [:index, :create]
