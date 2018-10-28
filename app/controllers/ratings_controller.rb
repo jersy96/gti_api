@@ -1,6 +1,7 @@
 class RatingsController < ApplicationController
   def create
     rating = Rating.new(rating_params)
+    rating.student_id = @current_user.id
     if rating.save
       render json: rating, status: :ok
     else
@@ -11,7 +12,6 @@ class RatingsController < ApplicationController
   private
   def rating_params
     params.permit(
-      :student_id,
       :tutor_id,
       :score,
       :comment
