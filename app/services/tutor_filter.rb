@@ -1,7 +1,7 @@
 class TutorFilter < Filter
   private
   def name
-    Tutor.where("first_name || ' ' || second_name || ' ' || first_lastname || ' ' || second_lastname LIKE ?", likefy(@fc['value']))
+    Tutor.where("first_name || ' ' ||  first_lastname LIKE ?", likefy(@fc['value']))
   end
 
   def price
