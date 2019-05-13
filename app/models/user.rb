@@ -2,6 +2,9 @@ class User < ApplicationRecord
   #Dependencies
   has_secure_password
 
+  #Uploaders
+  mount_uploader :profile_picture, ProfilePictureUploader
+
   #Validations
   validates :email, :first_name, :first_lastname, presence: true
   validates :email, format: {with: /\A(^\S+)@(.[a-zA-Z0-9]+)+\z/}, allow_blank: true
@@ -11,6 +14,12 @@ class User < ApplicationRecord
   before_save :format_names
 
   #Methods
+  def complete_profile_picture_url
+    if self.profile_picture.present?
+      "#{ENV['MULTIMEDIA_SERVER_URL']}#{self.profile_picture.url}"
+    end
+  end
+
   protected
   def format_names
     self.first_name.downcase!

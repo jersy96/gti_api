@@ -37,7 +37,8 @@ class StudentsController < ApplicationController
       :phone,
       :cellphone,
       :university,
-      :career
+      :career,
+      :profile_picture
     )
   end
 end

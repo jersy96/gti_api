@@ -53,7 +53,8 @@ class TutorsController < ApplicationController
       :cellphone,
       :description,
       :price,
-      :average
+      :average,
+      :profile_picture
     )
   end
 
