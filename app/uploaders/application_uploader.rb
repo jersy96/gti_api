@@ -1,4 +1,4 @@
-class ApplicationUploader < ActiveRecord::Base
+class ApplicationUploader < CarrierWave::Uploader::Base
   after :remove, :clear_uploader
 
   protected
