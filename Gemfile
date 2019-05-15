@@ -45,3 +45,5 @@ gem 'active_model_serializers', '~> 0.8.0'
 gem 'enum_attributes_validation'
 
 gem 'carrierwave'
+
+gem 'fog-aws'
