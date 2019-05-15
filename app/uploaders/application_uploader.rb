@@ -1,6 +1,10 @@
 class ApplicationUploader < CarrierWave::Uploader::Base
   after :remove, :clear_uploader
 
+  # Choose what kind of storage to use for this uploader:
+  # storage :file
+  storage :fog
+
   protected
   def random_filename(model, camp)
     file_name = ''
