@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :subjects, only: [:index, :create]
   resources :solicitudes, only: [:index, :create, :update]
   resources :ratings, only: [:create]
+  resources :stories, only: [:index, :create]
 
   # Namespaces
   namespace :tutors do
