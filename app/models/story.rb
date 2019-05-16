@@ -1,4 +1,7 @@
 class Story < ApplicationRecord
+  #Uploaders
+  mount_uploader :file, StoryUploader
+
   # Relationships
   belongs_to :user
 
@@ -13,6 +16,12 @@ class Story < ApplicationRecord
   after_create :set_expiration_time
 
   # Methods
+  def complete_file_url
+    if self.file.present?
+      "#{ENV['MULTIMEDIA_SERVER_URL']}#{self.file.url}"
+    end
+  end
+
   protected
   def set_expiration_time
     update_column(:expiration_time, Time.now + 24.hours)
