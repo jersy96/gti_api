@@ -5,6 +5,9 @@ class User < ApplicationRecord
   #Uploaders
   mount_uploader :profile_picture, ProfilePictureUploader
 
+  # Relationships
+  has_many :story
+
   #Validations
   validates :email, :first_name, :first_lastname, presence: true
   validates :email, format: {with: /\A(^\S+)@(.[a-zA-Z0-9]+)+\z/}, allow_blank: true
