@@ -6,7 +6,7 @@ class TutorSerializer < ApplicationSerializer
   end
 
   def comments
-    object.ratings.order('created_at DESC').pluck(:comment).compact
+    serialize_each(object.ratings.order('created_at DESC'), RatingSerializer)
   end
 
   def rating
