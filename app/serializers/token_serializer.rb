@@ -1,7 +1,7 @@
 class TokenSerializer < ApplicationSerializer
-  attributes :secret, :user_type
+  attributes :secret, :user
 
-  def user_type
-    object.user.type.underscore
+  def user
+    UserSerializer.new(object.user).as_json[:user]
   end
 end
