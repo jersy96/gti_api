@@ -23,6 +23,14 @@ class User < ApplicationRecord
     end
   end
 
+  def fullname
+    fname = first_name
+    fname = "#{fname} #{second_name}" if second_name.present?
+    fname = "#{fname} #{first_lastname}"
+    fname = "#{fname} #{second_lastname}" if second_lastname.present?
+    fname
+  end
+
   protected
   def format_names
     self.first_name.downcase!
