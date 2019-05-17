@@ -47,3 +47,5 @@ gem 'enum_attributes_validation'
 gem 'carrierwave'
 
 gem 'fog-aws'
+
+gem 'fcm'
