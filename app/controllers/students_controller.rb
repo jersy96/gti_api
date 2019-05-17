@@ -3,11 +3,16 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:update]
 
   def create
-    student = Student.new(student_params)
-    if student.save
-      render json: student, status: :ok
+    @student = Student.new(student_params)
+    if @student.save
+      set_token
+      response = {
+        token: TokenSerializer.new(@token).as_json[:token],
+        student: StudentSerializer.new(@student).as_json[:student]
+      }
+      render json: response, status: :ok
     else
-      render json: student.errors.messages, status: :unprocessable_entity
+      render json: @student.errors.messages, status: :unprocessable_entity
     end
   end
 
@@ -39,6 +44,19 @@ class StudentsController < ApplicationController
       :university,
       :career,
       :profile_picture
+    )
+  end
+
+  def set_token
+    auth = Authentication.new(student_credentials)
+    auth.create_session
+    @token = auth.token
+  end
+
+  def student_credentials
+    params.permit(
+      :email,
+      :password
     )
   end
 end
