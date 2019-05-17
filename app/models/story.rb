@@ -1,7 +1,4 @@
 class Story < ApplicationRecord
-  #Uploaders
-  mount_uploader :file, StoryUploader
-
   # Relationships
   belongs_to :user
 
