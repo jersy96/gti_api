@@ -43,7 +43,8 @@ class StudentsController < ApplicationController
       :cellphone,
       :university,
       :career,
-      :profile_picture
+      :profile_picture,
+      :firebase_token
     )
   end
 

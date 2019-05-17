@@ -54,7 +54,8 @@ class TutorsController < ApplicationController
       :description,
       :price,
       :average,
-      :profile_picture
+      :profile_picture,
+      :firebase_token
     )
   end
 

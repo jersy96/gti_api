@@ -1,5 +1,5 @@
 class StudentSerializer < ApplicationSerializer
-  attributes :id, :email, :first_name, :second_name, :first_lastname, :second_lastname, :address, :phone, :cellphone, :university, :career, :profile_picture
+  attributes :id, :email, :first_name, :second_name, :first_lastname, :second_lastname, :address, :phone, :cellphone, :university, :career, :profile_picture, :firebase_token
 
   def profile_picture
     object.complete_profile_picture_url

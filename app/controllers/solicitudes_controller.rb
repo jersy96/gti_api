@@ -62,9 +62,10 @@ class SolicitudesController < ApplicationController
   end
 
   def send_push_notifications
-    if @solicitude.persisted? && params[:devicetoken].present?
+    fb_token = @solicitude&.tutor&.firebase_token
+    if @solicitude.persisted? && fb_token.present?
       fcm = FCM.new(ENV['FIREBASE_TOKEN'])
-      registration_ids= [params[:devicetoken]]
+      registration_ids= [fb_token]
       options = {
         notification: {
           title: 'Nueva solicitud de tutoria',

@@ -1,5 +1,5 @@
 class UserSerializer < ApplicationSerializer
-  attributes :id, :type, :email, :first_name, :second_name, :first_lastname, :second_lastname, :address, :phone, :cellphone, :profile_picture
+  attributes :id, :type, :email, :first_name, :second_name, :first_lastname, :second_lastname, :address, :phone, :cellphone, :profile_picture, :firebase_token
 
   def type
     object.type.downcase
