@@ -7,7 +7,11 @@ class SessionsController < ApplicationController
   def create
     auth = Authentication.new(params.require(:credentials), params[:type])
     auth.create_session
-    render json: auth.token, status: :ok
+    render(
+      json: auth.token,
+      status: :ok,
+      serializer: TokenSerializer
+    )
   end
 
   def destroy
